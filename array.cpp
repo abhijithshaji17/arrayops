@@ -48,5 +48,26 @@ void array<T>::insert_end(T key){
 }
 
 template<typename T>
+void array<T>::delete_beg(){
+    if(ub>=lb){
+        for(int k = lb + 1; k<=ub; k++){
+            a[k-1] = a[k];
+        }
+        ub = ub - 1;
+    }else{
+        cout<<"Array is empty";
+    }
+}
+template<typename T>
+void array<T>::delete_pos(int pos){
+    if(pos<lb||pos>ub){
+        cout<<"Invalid postion\n";
+    }
+    for(int k = pos; k<ub; k++){
+        a[k] = a[k+1];
+    }
+    ub = ub - 1;
+}
+
 
 
