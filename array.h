@@ -1,18 +1,16 @@
-#include<ostream>
-template<typename T>
+#include<iostream>
+template<class T>
 class array{
-    int i,lb,ub;
+    int lb,ub;
     T a[100];
     public:
-        array(int lb,int ub){
-            LB = lb;
-            UB = ub;
-            for(i=lb;i<ub;i++){
-                a[i] = 0;
-            }
-        }
+        array();
         int getLB();
         int getUB();
-        void insert(int index, T value);
-        template<class U> friend std::ostream& operator<<(std::ostream&, array<U>&);
+        void insert_beg(T);
+        void insert_pos(T, int);
+        void insert_end(T);
+        void delete_beg();
+        void delete_pos(int);
+        void delete_end();
 };
