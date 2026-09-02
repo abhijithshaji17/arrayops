@@ -6,48 +6,48 @@ void menuBar(){
     T element;
     int pos, index;
     do{
-        cout<<"\nMenu:\n";
-        cout<<"a. Insertion at beginning\n";
-        cout<<"b. Insertion at position\n";
-        cout<<"c. Insertion at end\n";
-        cout<<"d. Deletion at beginning\n";
-        cout<<"e. Deletion at postion\n";
-        cout<<"f. Deletion at end\n";
-        cout<<"g. Exit\n";
-        cout<<"Enter the desired array operation of your choice: ";
-        cin>>choice;
+        std::cout<<"\nMenu:\n";
+        std::cout<<"a. Insertion at beginning\n";
+        std::cout<<"b. Insertion at position\n";
+        std::cout<<"c. Insertion at end\n";
+        std::cout<<"d. Deletion at beginning\n";
+        std::cout<<"e. Deletion at postion\n";
+        std::cout<<"f. Deletion at end\n";
+        std::cout<<"g. Exit\n";
+        std::cout<<"Enter the desired array operation of your choice: ";
+        std::cin>>choice;
     switch(choice){
         case 'a':
-            cout<<"Enter the element to insert at beginning: ";
-            cin>>element;
+            std::cout<<"Enter the element to insert at beginning: ";
+            std::cin>>element;
             arr.insert_beg(element);
             break;
         case 'b':
-            cout<<"Enter the element to insert at position: ";
-            cin>>element;
+            std::cout<<"Enter the element to insert at position: ";
+            std::cin>>element;
             arr.insert_pos(element,pos);
             break;
         case 'c':
-            cout<<"Enter the element to insert at end: ";
-            cin>>element;
+            std::cout<<"Enter the element to insert at end: ";
+            std::cin>>element;
             arr.insert_end(element);
             break;
         case 'd':
             arr.delete_beg();
             break;
         case 'e':
-            cout<<"Enter the position to delete from: ";
-            cin>>pos;
+            std::cout<<"Enter the position to delete from: ";
+            std::cin>>pos;
             arr.delete_pos(pos);
             break;
         case 'f':
-            cout<<"Enter the element to delete at end: ";
+            std::cout<<"Enter the element to delete at end: ";
             arr.delete_end();
             break;
         case 'g':
-            cout<<"Exiting program.\n";
+            std::cout<<"Exiting program.\n";
         default:
-            cout<<"Invalid choice.\n";
+            std::cout<<"Invalid choice.\n";
     }while(choice!='g');
     }
 }

@@ -55,13 +55,13 @@ void array<T>::delete_beg(){
         }
         ub = ub - 1;
     }else{
-        cout<<"Array is empty";
+        std::cout<<"Array is empty";
     }
 }
 template<typename T>
 void array<T>::delete_pos(int pos){
     if(pos<lb||pos>ub){
-        cout<<"Invalid postion\n";
+        std::cout<<"Invalid postion\n";
     }
     for(int k = pos; k<ub; k++){
         a[k] = a[k+1];
