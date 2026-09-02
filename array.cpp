@@ -1,5 +1,6 @@
 #include "array.h"
-template<class T>
+
+template<typename T>
 array<T>::array(){
     lb = 1;
     ub = 0;
@@ -7,12 +8,45 @@ array<T>::array(){
         a[i] = 0;
     }
 }
-template<class T>
+
+template<typename T>
 int array<T>::getLB(){
     return lb;
 }
-template<class T>
+
+template<typename T>
 int array<T>::getUB(){
     return ub;
 }
+
+template<typename T>
+void array<T>::insert_beg(T key){
+    ub = ub+1;
+    int k = ub - 1;
+    while(k>=lb){
+        a[k+1] = a[k];
+        k = k - 1;
+    }
+    a[lb] = key;
+}
+
+template<typename T>
+void array<T>::insert_pos(T key, int pos){
+    ub = ub + 1;
+    int k = ub - 1;
+    while(k>=pos){
+        a[k+1] = a[k];
+        k = k - 1;
+    }
+    a[pos] = key;
+}
+
+template<typename T>
+void array<T>::insert_end(T key){
+    ub = ub + 1;
+    a[ub] = key;
+}
+
+template<typename T>
+
 

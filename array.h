@@ -1,5 +1,5 @@
 #include<iostream>
-template<class T>
+template<typename T>
 class array{
     int lb,ub;
     T a[100];
