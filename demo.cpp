@@ -1,132 +1,84 @@
-#include "array.h"
-#include <iostream>
-#include <limits>
+#include "array.cpp"
 
-using std::cout;
-using std::cin;
-using std::endl;
+int main()
+{
+    char repeat;
+    int choice;
+    int pos, ele, l, u;
+    array<int> arr;
 
-template<typename T>
-void menuBar() {
-    array<T> arr;
-    char choice;
-    T element;
-    int pos;
-    int main() {
-    int a[20], size;
-    cout << "Enter number of elements: ";
-    cin >> size;
-    cout << "Enter elements:\n";
-    for (int i = 0; i < size; i++){
-        cin >> a[i];
-    }
-    printarr(a, size);
+    do
+    {
+        cout << "---   Menu\t---\n";
+        cout << "1. Create array\n";
+        cout << "2. Insertion at beginning\n";
+        cout << "3. Insertion specific position\n";
+        cout << "4. Insertion at end\n";
+        cout << "5. Deletion from beginning\n";
+        cout << "6. Deletion at specific position\n";
+        cout << "7. Deletion from end\n";
+        cout << "8. Display the array elements\n";
+        cout << "Enter your choice: \n";
+        cin >> choice;
 
-    do {
-        cout << "\nMenu:\n";
-        cout << "a. Insertion at beginning\n";
-        cout << "b. Insertion at position\n";
-        cout << "c. Insertion at end\n";
-        cout << "d. Deletion at beginning\n";
-        cout << "e. Deletion at position\n";
-        cout << "f. Deletion at end\n";
-        cout << "g. Exit\n";
-        cout << "Enter your choice: ";
-        if (!(cin >> choice)) break;
-
-        switch (choice) {
-            case 'a':
-                cout << "Enter element to insert: ";
-                if (cin >> element) {
-                    arr.insert_beg(element);
-                    arr.display();
-                } else {
-                    cout << "Invalid element input!\n";
-                    cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                }
+        switch (choice)
+        {
+            case 1:
+                cout << "Enter the lower bound\n";
+                cin >> l;
+                arr.setLB(l);
+                cout << "Enter the upper bound\n";
+                cin >> u;
+                arr.setUB(u);
+                arr.create();
                 break;
-            case 'b':
-                cout << "Enter element: ";
-                if (cin >> element) {
-                    cout << "Enter 1-based position (" << arr.getLB() << " to " << arr.getUB() + 1 << "): ";
-                    if (cin >> pos) {
-                        arr.insert_pos(element, pos);
-                        arr.display();
-                    } else {
-                        cout << "Invalid position input!\n";
-                        cin.clear();
-                        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    }
-                } else {
-                    cout << "Invalid element input!\n";
-                    cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                }
+
+            case 2:
+                cout << "Enter the element: \n";
+                cin >> ele;
+                arr.insert_beg(ele);
                 break;
-            case 'c':
-                cout << "Enter element to insert: ";
-                if (cin >> element) {
-                    arr.insert_end(element);
-                    arr.display();
-                } else {
-                    cout << "Invalid element input!\n";
-                    cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                }
+
+            case 3:
+                cout << "enter the position(" << arr.getLB() << "--" << arr.getUB() << ")";
+                cin >> pos;
+                cout << "Enter the element: \n";
+                cin >> ele;
+                arr.insert_pos(pos, ele);
                 break;
-            case 'd':
+
+            case 4:
+                cout << "Enter the element: \n";
+                cin >> ele;
+                arr.insert_end(ele);
+                break;
+
+            case 5:
                 arr.delete_beg();
-                arr.display();
                 break;
-            case 'e':
-                if (arr.getUB() < arr.getLB()) {
-                    cout << "Array is empty!\n";
-                } else {
-                    cout << "Enter 1-based position to delete (" << arr.getLB() << " to " << arr.getUB() << "): ";
-                    if (cin >> pos) {
-                        arr.delete_pos(pos);
-                        arr.display();
-                    } else {
-                        cout << "Invalid position input!\n";
-                        cin.clear();
-                        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    }
-                }
-                break;
-            case 'f':
-                arr.delete_end();
-                arr.display();
-                break;
-            case 'p':
-                arr.display();
-                break;
-            case 'g':
-                cout << "Exiting menu.\n";
-                break;
-            default:
-                cout << "Invalid choice.\n";
-                break;
-        }
-    } while (choice != 'g');
-}
 
-int main() {
-    int dtype;
-    cout << "Choose the datatype:\n";
-    cout << "1. Integer\n2. Float\n3. Double\n4. Char\n";
-    cout << "Choice: ";
-    if (cin >> dtype) {
-        switch (dtype) {
-            case 1: menuBar<int>(); break;
-            case 2: menuBar<float>(); break;
-            case 3: menuBar<double>(); break;
-            case 4: menuBar<char>(); break;
-            default: cout << "Invalid datatype selection.\n"; break;
+            case 6:
+                cout << "enter the position(" << arr.getLB() << "--" << arr.getUB() << ")";
+                cin >> pos;
+                arr.delete_pos(pos); 
+                break;
+
+            case 7:
+                arr.delete_end();
+                break;
+
+            case 8:
+                cout << arr;
+                break;
+
+            default:
+                cout << "Invalid entry" << endl;
         }
-    } else {
-        cout << "Invalid input.\n";
-    }
+
+        cout << "Do you want to continue(y/n)" << endl;
+        cin >> repeat;
+
+    } while (repeat == 'y');
 
     return 0;
 }
