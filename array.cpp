@@ -1,4 +1,5 @@
 #include "array.h"
+int val;
 
 template <class T>
 array<T>::array()
@@ -8,10 +9,14 @@ array<T>::array()
 }
 
 template <class T>
-void array<T>::setLB(int x) { lb = x; }
+void array<T>::setLB(){ 
+    cin >> lb; 
+}
 
 template <class T>
-void array<T>::setUB(int x) { ub = x; }
+void array<T>::setUB(){ 
+    cin >> ub;
+}
 
 template <class T>
 void array<T>::create()
@@ -29,4 +34,32 @@ void array<T>::display()
     cout << endl;
 }
 template <class T>
-void array<T>::
+void array<T>::insert_beg(T key){
+    cout<<"\nEnter value to insert: ";
+    cin>>val;
+    for(i=ub-1;i>=lb;i--){                // Shift existing elements one position to the right
+        a[i+1] = a[i];
+    }
+    a[lb] = val;                         // Insert new value at the lower bound
+    ub++;                  
+}
+template <class T>
+void array<T>::insert_pos(T key,int pos){
+
+}
+template <class T>
+void array<T>::insert_end(T key){
+
+}
+template <class T>
+void array<T>::delete_beg(){
+
+}
+template <class T>
+void array<T>::delete_pos(int pos){
+
+}
+template <class T>
+void array<T>::delete_end(){
+
+}
