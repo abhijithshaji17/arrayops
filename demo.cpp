@@ -2,7 +2,7 @@
 
 int main()
 {
-    char repeat;
+    char opt;
     int choice;
     int position, element, lower, upper;
     array<int> arr;
@@ -75,10 +75,10 @@ int main()
                 cout << "Invalid entry" << endl;
         }
 
-        cout << "\nDo you want to continue(y/n)" << endl;
-        cin >> repeat;
+        cout << "\nEnd program (y/n)" << endl;
+        cin >> opt;
 
-    } while (repeat == 'y');
+    } while (opt == 'n'|| opt == 'N');
 
     return 0;
 }
