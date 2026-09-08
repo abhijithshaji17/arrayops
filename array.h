@@ -18,10 +18,10 @@ class array
     int  getUB();                          
     void create();                         
     void insert_end(T key);             
-    void insert_beg(T key);       // Fixed: added '('
+    void insert_beg(T key);       
     void insert_pos(int, T key);  
     void delete_end();                  
-    void delete_beg();            // Fixed: added '('
+    void delete_beg();            
     void delete_pos(int);          
     template<class U> friend ostream& operator<<(ostream&, const array<U>&);
 };
