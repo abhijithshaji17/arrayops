@@ -3,7 +3,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::ostream;
-#include <ostream>
 
 template <class T>
 class array
