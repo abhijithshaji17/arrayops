@@ -4,7 +4,7 @@ int main()
 {
     char repeat;
     int choice;
-    int pos, ele, l, u;
+    int position, element, lower, upper;
     array<int> arr;
 
     do
@@ -25,32 +25,32 @@ int main()
         {
             case 1:
                 cout << "Enter the lower bound\n";
-                cin >> l;
-                arr.setLB(l);
+                cin >> lower;
+                arr.setLB(lower);
                 cout << "Enter the upper bound\n";
-                cin >> u;
-                arr.setUB(u);
+                cin >> upper;
+                arr.setUB(upper);
                 arr.create();
                 break;
 
             case 2:
                 cout << "Enter the element: \n";
-                cin >> ele;
-                arr.insert_beg(ele);
+                cin >> element;
+                arr.insert_beg(element);
                 break;
 
             case 3:
                 cout << "enter the position(" << arr.getLB() << "--" << arr.getUB() << ")";
-                cin >> pos;
+                cin >> position;
                 cout << "Enter the element: \n";
-                cin >> ele;
-                arr.insert_pos(pos, ele);
+                cin >> element;
+                arr.insert_pos(position, element);
                 break;
 
             case 4:
                 cout << "Enter the element: \n";
-                cin >> ele;
-                arr.insert_end(ele);
+                cin >> element;
+                arr.insert_end(element);
                 break;
 
             case 5:
@@ -58,9 +58,9 @@ int main()
                 break;
 
             case 6:
-                cout << "enter the position(" << arr.getLB() << "--" << arr.getUB() << ")";
-                cin >> pos;
-                arr.delete_pos(pos); 
+                cout << "Enter the position(" << arr.getLB() << "--" << arr.getUB() << ")";
+                cin >> position;
+                arr.delete_pos(position); 
                 break;
 
             case 7:
@@ -75,7 +75,7 @@ int main()
                 cout << "Invalid entry" << endl;
         }
 
-        cout << "Do you want to continue(y/n)" << endl;
+        cout << "\nDo you want to continue(y/n)" << endl;
         cin >> repeat;
 
     } while (repeat == 'y');
