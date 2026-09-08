@@ -1,3 +1,4 @@
+// Menu driven array basic operations program
 #include "array.h"
 template <class T>
 void array<T>::setLB(int x)
