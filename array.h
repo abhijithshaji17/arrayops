@@ -5,8 +5,7 @@ using std::endl;
 using std::ostream;
 
 template <class T>
-class array
-{
+class array{
     int lb, ub;   
     T a[100];     
 
