@@ -9,7 +9,7 @@ class array{
     int lb, ub;   
     T a[100];     
 
-    public:
+public:
     array();                                
     void setLB(int x);                    
     void setUB(int x);                     
