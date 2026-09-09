@@ -9,7 +9,7 @@ int main()
 
     do
     {
-        cout << "---   Menu\t---\n";
+        cout << "\n--- Menu ---\n";
         cout << "1. Create array\n";
         cout << "2. Insertion at beginning\n";
         cout << "3. Insertion specific position\n";
