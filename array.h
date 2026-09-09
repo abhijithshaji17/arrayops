@@ -16,11 +16,11 @@ public:
     int  getLB();                          
     int  getUB();                          
     void create();                         
-    void insert_end(T key);             
     void insert_beg(T key);       
     void insert_pos(int, T key);  
-    void delete_end();                  
+    void insert_end(T key);             
     void delete_beg();            
     void delete_pos(int);          
+    void delete_end();                  
     template<class U> friend ostream& operator<<(ostream&, const array<U>&);
 };
