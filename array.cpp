@@ -32,7 +32,7 @@ array<T>::array(){
 template <class T>
 void array<T>::create(){
     int i;
-    cout << "Enter the elements:\n";
+    cout << "\nEnter the elements:\n";
     for (i = lb; i <= ub; i++){
         cout<<"Element "<<i+1<<": ";
         cin >> a[i];

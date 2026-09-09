@@ -18,16 +18,16 @@ int main()
         cout << "6. Deletion at specific position\n";
         cout << "7. Deletion from end\n";
         cout << "8. Display the array elements\n";
-        cout << "Enter your choice: \n";
+        cout << "\nEnter your choice: ";
         cin >> choice;
 
         switch (choice)
         {
             case 1:
-                cout << "Enter the lower bound\n";
+                cout << "Enter the lower bound: ";
                 cin >> lower;
                 arr.setLB(lower);
-                cout << "Enter the upper bound\n";
+                cout << "Enter the upper bound: ";
                 cin >> upper;
                 arr.setUB(upper);
                 arr.create();
@@ -72,10 +72,10 @@ int main()
                 break;
 
             default:
-                cout << "Invalid entry" << endl;
+                cout << "Invalid entry\n";
         }
 
-        cout << "\nEnd program (y/n)" << endl;
+        cout << "\nEnd program (y/n)\n";
         cin >> opt;
 
     } while (opt == 'n'|| opt == 'N');
